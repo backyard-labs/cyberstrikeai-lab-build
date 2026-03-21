@@ -64,7 +64,7 @@ OS Configuration (Netplan): We must configure Ubuntu to talk to the LLM on adapt
 
 Edit your Netplan file: sudo nano /etc/netplan/50-cloud-init.yaml
 
-YAML
+```YAML
 network:
   version: 2
   ethernets:
