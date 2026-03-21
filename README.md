@@ -88,6 +88,13 @@ network:
         use-routes: false
 Apply the configuration: sudo netplan apply
 
+### Understanding the Netplan Configuration
+Before applying the configuration, it is important to understand how this routing works:
+
+* **`ens33` (The Control Line):** We disable DHCP (`dhcp4: false`) and assign a **Static IP** (`192.168.93.50`). This guarantees that the connection between your CyberStrikeAI VM and your host machine (running the Ollama LLM API) never breaks or changes unexpectedly upon reboot.
+* **`routes` & `nameservers`:** We explicitly define the default gateway (`192.168.93.2`) and external DNS (`8.8.8.8`, `1.1.1.1`) so the control interface retains internet access for downloading tools or updates.
+* **`ens37` (The Attack Line):** We enable DHCP so it automatically joins the isolated cyber range, but we enforce `dhcp4-overrides: use-routes: false`. This is critical: it prevents Ubuntu from assigning a second default gateway, which would cause routing confusion and sever your connection to the AI model.
+
 🧠 Phase 4: AI Role Hardening & Translation
 By default, CyberStrikeAI stores its agent personas as Chinese YAML files. We will use a Python script and our local Llama 3.1 model to translate these and inject a strict "Zero Vagueness" reporting SOP.
 
