@@ -40,16 +40,19 @@ Once booted, update the system and install required tools:
 Bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install golang-go python3 python3-pip python3-requests python3-yaml curl git -y
-⚙️ Phase 2: CyberStrikeAI Installation
-Fetch the Application:
-(Note: Replace the URL with the official CyberStrikeAI repository/source if applicable).
-
-Bash
-cd ~
-git clone https://github.com/example/CyberStrikeAI.git
-cd CyberStrikeAI
+##⚙️ Phase 2: CyberStrikeAI Installation
+1. **Fetch the Application:**
+   *(Note: Replace the URL with the official CyberStrikeAI repository/source if applicable).*
+   ```bash
+   cd ~
+   git clone [https://github.com/example/CyberStrikeAI.git](https://github.com/example/CyberStrikeAI.git)
+   cd CyberStrikeAI
 Build and Verify:
 Ensure the directory structure is intact, specifically the roles/ folder where the AI personas live.
+
+go build -o cyberstrikeai main.go
+# Run once to generate default configs, then stop (Ctrl+C)
+./cyberstrikeai
 
 Bash
 go build -o cyberstrikeai main.go
