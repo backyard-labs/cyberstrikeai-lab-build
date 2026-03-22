@@ -49,14 +49,11 @@ Target: A vulnerable VM (e.g., Metasploitable2) running on an isolated VMware LA
    go build -o cyberstrikeai main.go
    # Run once to generate default configs, then stop (Ctrl+C)
    ./cyberstrikeai
-Bash
-go build -o cyberstrikeai main.go
-# Run once to generate default configs, then stop (Ctrl+C)
-./cyberstrikeai 
-🛡️ Phase 3: Network Architecture (The Dual-NIC Setup)
+
+Phase 3: Network Architecture (The Dual-NIC Setup)
 To safely run autonomous exploits without exposing our host network, we will add a second network adapter in VMware to connect exclusively to our target range.
 
-> **⚠️ Network Configuration Note:** > The IP addresses used in this guide (e.g., `192.168.93.50` and `192.168.1.108`) are representative examples from this specific lab environment. You must substitute these with the actual IP subnets assigned to your host machine's bridging adapter and your isolated virtual LAN.
+⚠️ Network Configuration Note: > The IP addresses used in this guide (e.g., 192.168.93.50 and 192.168.1.108) are representative examples from this specific lab environment. You must substitute these with the actual IP subnets assigned to your host machine's bridging adapter and your isolated virtual LAN.
 
 1. **Hardware Configuration:** In VMware settings, add a second Network Adapter and assign it to your isolated LAN segment (e.g., `VMnet2`).
 Hardware Configuration: In VMware settings, add a second Network Adapter and assign it to your isolated LAN segment (e.g., VMnet2).
