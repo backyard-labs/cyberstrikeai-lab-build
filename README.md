@@ -43,13 +43,12 @@ Target: A vulnerable VM (e.g., Metasploitable2) running on an isolated VMware LA
    cd ~
    git clone [https://github.com/example/CyberStrikeAI.git](https://github.com/example/CyberStrikeAI.git)
    cd CyberStrikeAI
-Build and Verify:
-Ensure the directory structure is intact, specifically the roles/ folder where the AI personas live.
-
-go build -o cyberstrikeai main.go
-# Run once to generate default configs, then stop (Ctrl+C)
-./cyberstrikeai
-
+2. **Build and Verify:**
+   Ensure the directory structure is intact, specifically the `roles/` folder where the AI personas live.
+   ```bash
+   go build -o cyberstrikeai main.go
+   # Run once to generate default configs, then stop (Ctrl+C)
+   ./cyberstrikeai
 Bash
 go build -o cyberstrikeai main.go
 # Run once to generate default configs, then stop (Ctrl+C)
