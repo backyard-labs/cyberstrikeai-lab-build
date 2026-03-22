@@ -26,21 +26,17 @@ AI Engine: A host machine running Ollama with the llama3.1 model pulled and acce
 Target: A vulnerable VM (e.g., Metasploitable2) running on an isolated VMware LAN segment (e.g., VMnet2).
 
 🏗️ Phase 1: VM Provisioning & OS Setup
-Create the Virtual Machine:
-
-Allocate at least 4GB RAM and 2 CPU Cores.
-
-Attach a single Network Adapter set to NAT or Bridged (we need internet access for the initial installation).
-
-Install Ubuntu Server. Create a standard user (e.g., ali).
-
-System Update & Dependencies:
-Once booted, update the system and install required tools:
-
-Bash
-sudo apt update && sudo apt upgrade -y
-sudo apt install golang-go python3 python3-pip python3-requests python3-yaml curl git -y
-##⚙️ Phase 2: CyberStrikeAI Installation
+1. **Create the Virtual Machine:**
+   * Allocate at least **4GB RAM** and **2 CPU Cores**.
+   * Attach a single Network Adapter set to **NAT** or **Bridged** (we need internet access for the initial installation).
+   * Install Ubuntu Server. Create a standard user (e.g., `ali`).
+2. **System Update & Dependencies:**
+   Once booted, update the system and install required tools:
+   ```bash
+   sudo apt update && sudo apt upgrade -y
+   sudo apt install golang-go python3 python3-pip python3-requests python3-yaml curl git -y
+   
+⚙️ Phase 2: CyberStrikeAI Installation
 1. **Fetch the Application:**
    *(Note: Replace the URL with the official CyberStrikeAI repository/source if applicable).*
    ```bash
